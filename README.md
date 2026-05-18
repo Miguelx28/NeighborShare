@@ -1,62 +1,9 @@
 # NeighborShare 
 
-Una app para que los vecinos se presten cosas entre sí.
+App para que los vecinos se presten cosas entre sí.
 
-## ¿Qué hace?
+Los usuarios pueden registrarse, publicar artículos disponibles y explorar lo que otros vecinos ofrecen. Solo el dueño de cada artículo puede editarlo o eliminarlo.
 
-- Te registras, inicias sesión
-- Publicas artículos que puedes prestar
-- Ves lo que otros vecinos tienen disponible
-- Solo tú puedes editar o borrar tus propios artículos
+El backend está hecho con Node.js y Express, usa SQL Server como base de datos y JWT para la autenticación. El frontend es HTML, CSS y JavaScript vanilla.
 
-## Stack
-
-- **Backend:** Node.js + Express
-- **Base de datos:** SQL Server
-- **Auth:** JWT + bcrypt
-- **Frontend:** HTML, CSS y JS vanilla
-
-## Cómo correrlo
-
-
-1. Clona el repo y entra al backend:
-   ```bash
-   git clone https://github.com/DaniMF05/NeighborShare.git
-   cd NeighborShare/backend
-   npm install
-   ```
-
-2. Crea un archivo `.env` en `/backend`:
-   ```env
-   DB_USER=...
-   DB_PASSWORD=...
-   DB_SERVER=...
-   DB_NAME=NeighborShare
-   JWT_SECRET=algo_secreto
-   PORT=3000
-   ```
-
-3. Corre el script `BD/CREACION_DATOS.sql` en SSMS para crear las tablas.
-
-4. Levanta el servidor:
-   ```bash
-   node index.js
-   ```
-
-5. Abre `frontend/NeighboreShare.html` en un navegador.
-
-## Endpoints principales
-
-| Método | Ruta | Qué hace |
-|---|---|---|
-| POST | `/api/auth/register` | Crear cuenta |
-| POST | `/api/auth/login` | Iniciar sesión |
-| GET | `/api/articulos` | Ver catálogo |
-| POST | `/api/articulos` | Publicar artículo  |
-| PUT | `/api/articulos/:id` | Editar artículo  |
-| DELETE | `/api/articulos/:id` | Borrar artículo  |
-
-
-## Estado del proyecto
-
- En desarrollo
+La base de datos maneja cuatro entidades: usuarios, artículos, reservas y calificaciones — preparada para un sistema de confianza entre vecinos.
